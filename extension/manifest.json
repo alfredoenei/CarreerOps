@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "CareerOps Clipper",
+  "version": "1.1",
+  "description": "Dynamic Job Capture for CareerOps CRM.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/jobs/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    },
+    {
+      "matches": [
+        "http://localhost:5173/*",
+        "http://127.0.0.1:5173/*",
+        "http://localhost:5174/*",
+        "http://127.0.0.1:5174/*"
+      ],
+      "js": [
+        "bridge.js"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*",
+    "http://localhost:5000/*",
+    "http://localhost:5173/*",
+    "http://127.0.0.1:5173/*",
+    "http://localhost:5174/*",
+    "http://127.0.0.1:5174/*"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "gestor-tareas-root",
+  "version": "1.0.0",
+  "description": "Kanban Task Manager - Full Stack Portfolio Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "install-all": "npm install && cd backend && npm install && cd ../frontend && npm install",
+    "seed": "cd backend && node seed.js"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

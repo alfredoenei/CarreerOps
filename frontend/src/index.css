@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-career-dark: #0b0e14;
+  --color-career-panel: #151b23;
+  --color-career-card: #1c2630;
+  --color-applied-blue: #3b82f6;
+  --color-interview-orange: #f97316;
+  --color-offer-green: #10b981;
+  
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-career-dark text-white font-sans overflow-hidden h-screen;
+  }
+
+  /* Custom Scrollbars for Dark Mode */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.2); }
+}
+
+@layer components {
+  /* Glassmorphism Effect */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+
+  .transition-all-200 {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+}
